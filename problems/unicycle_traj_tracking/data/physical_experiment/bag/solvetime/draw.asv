@@ -1,0 +1,35 @@
+solve_time = load('solve_time.mat');
+gmpc_solver_time = solve_time.gmpc_solver_time;
+nmpc_solver_time = solve_time.nmpc_solver_time;
+
+% calculate mean and std
+gmpc_solver_time_mean = mean(gmpc_solver_time);
+gmpc_solver_time_std = std(gmpc_solver_time - gmpc_solver_time_mean);
+nmpc_solver_time_mean = mean(nmpc_solver_time);
+nmpc_solver_time_std = std(nmpc_solver_time - nmpc_solver_time_mean);
+
+% max and min
+gmpc_solver_time_max = max(gmpc_solver_time);
+gmpc_solver_time_min = min(gmpc_solver_time);
+nmpc_solver_time_max = max(nmpc_solver_time);
+nmpc_solver_time_min = min(nmpc_solver_time);
+
+fprintf('gmpc_solver_time_mean: %f\n', gmpc_solver_time_mean);
+fprintf('gmpc_solver_time_std: %f\n', gmpc_solver_time_std);
+fprintf('nmpc_solver_time_mean: %f\n', nmpc_solver_time_mean);
+fprintf('nmpc_solver_time_std: %f\n', nmpc_solver_time_std);
+fprintf('gmpc_solver_time_max: %f\n', gmpc_solver_time_max);
+fprintf('gmpc_solver_time_min: %f\n', gmpc_solver_time_min);
+fprintf('nmpc_solver_time_max: %f\n', nmpc_solver_time_max);
+fprintf('nmpc_solver_time_min: %f\n', nmpc_solver_time_min);
+
+figure;
+
+labels = {'GMPC', 'NMPC'};
+ylim([0  0.01])
+boxplot([gmpc_solver_time', nmpc_solver_time'], 'Labels', {'GMPC', 'NMPC'}, 'Whisker', 1, 'Colors', 'b','OutlierSize', 0.1);
+
+% ylabel('Solve time (s)');
+% tightfig;
+% saveas(gcf, 'solve_time.jpg');
+% close(gcf);
