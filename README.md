@@ -1,6 +1,7 @@
 
 <div id="top" align="center">
 
+# [GMPC: Geometric Model Predictive Control for Wheeled Mobile Robot Trajectory Tracking](https://arxiv.org/abs/2403.07317)
 
 </div>
 
