@@ -64,7 +64,7 @@ pip install -r requirements.txt
 conda install -c conda-forge manifpy
 ```
 
-4. Run the following command to test the GMPC controller in the simulation environment:
+5. Run the following command to test the GMPC controller in the simulation environment:
 ```bash
 python problems/unicycle_traj_tracking/main_single_tracking_task.py
 ```
