@@ -1,11 +1,10 @@
 
 <div id="top" align="center">
 
-# [GMPC: Geometric Model Predictive Control for Wheeled Mobile Robot Trajectory Tracking](https://arxiv.org/abs/2403.07317)
-![PALoc Overview](./README/image-20230702133158290.png)
+
 </div>
 
-## ## Introduction
+## Introduction
 This is the official code repository of "**GMPC: Geometric Model Predictive Control for Wheeled Mobile Robot Trajectory Tracking**", which is accepted by RAL'24.
 
 **GMPC** leverages the geometric properties of the kinematic model to design a model predictive controller for wheeled mobile robot trajectory tracking. 
