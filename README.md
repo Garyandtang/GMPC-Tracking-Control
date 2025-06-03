@@ -20,14 +20,16 @@ The proposed controller is validated on both simulation and real-world experimen
 If you find this work useful, please consider citing our paper:
 
 ```
-@misc{tang2024gmpc,
-      title={GMPC: Geometric Model Predictive Control for Wheeled Mobile Robot Trajectory Tracking}, 
-      author={Jiawei Tang and Shuang Wu and Bo Lan and Yahui Dong and Yuqiang Jin and Guangjian Tian and Wen-An Zhang and Ling Shi},
-      year={2024},
-      eprint={2403.07317},
-      archivePrefix={arXiv},
-      primaryClass={eess.SY}
-}
+@ARTICLE{10478179,
+  author={Tang, Jiawei and Wu, Shuang and Lan, Bo and Dong, Yahui and Jin, Yuqiang and Tian, Guangjian and Zhang, Wen-An and Shi, Ling},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={GMPC: Geometric Model Predictive Control for Wheeled Mobile Robot Trajectory Tracking}, 
+  year={2024},
+  volume={9},
+  number={5},
+  pages={4822-4829},
+  keywords={Mobile robots;Trajectory tracking;Vectors;Trajectory;Manifolds;Kinematics;Algebra;Autonomous agents;motion control},
+  doi={10.1109/LRA.2024.3381088}}
 ```
 
 
