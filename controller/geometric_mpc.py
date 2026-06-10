@@ -66,6 +66,13 @@ class GeometricMPC:
         self.w_max = w_max
 
 
+    def vel_cmd_to_twist_matrix(self):
+        """Maps [v, w] to [v, 0, w]"""
+        M = np.zeros((3, 2))
+        M[0, 0] = 1  # v maps to first element
+        M[2, 1] = 1  # w maps to third element
+        return M
+
 
     def solve(self, current_state, t):
         """

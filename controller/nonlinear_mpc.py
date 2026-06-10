@@ -153,6 +153,9 @@ class NonlinearMPC:
         x_var = opti.variable(nx, N + 1)
         u_var = opti.variable(nu, N)
 
+        x_scaled = x_var / np.array([1.0, 1.0, np.pi])  
+        u_scaled = u_var / np.array([self.v_max, self.w_max])  
+        
         # initial state constraint
         opti.subject_to(x_var[:, 0] == state)
 
@@ -170,9 +173,9 @@ class NonlinearMPC:
             x_target = self.ref_state[:, index]
             u_target = self.ref_control[:, index]
             # u_target = np.zeros((2, 1))
-            cost += self.cost_func(x_var[:, i], x_target, u_var[:, i], u_target, self.Q, self.R)
 
-        cost += self.cost_func(x_var[:, N], x_goal, np.zeros((nu,1)), np.zeros((nu, 1)), 100*self.Q, self.R)
+        cost += self.cost_func(x_var[:, N], self.ref_state[:, index_end], 
+                       np.zeros((nu, 1)), self.ref_control[:, index_end], 100*self.Q, self.R)
         # control bound
         opti.subject_to(u_var[0, :] >= self.v_min)
         opti.subject_to(u_var[0, :] <= self.v_max)
