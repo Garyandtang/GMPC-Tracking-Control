@@ -153,6 +153,9 @@ class NonlinearMPC:
         x_var = opti.variable(nx, N + 1)
         u_var = opti.variable(nu, N)
 
+        x_scaled = x_var / np.array([1.0, 1.0, np.pi])  
+        u_scaled = u_var / np.array([self.v_max, self.w_max])  
+        
         # initial state constraint
         opti.subject_to(x_var[:, 0] == state)
 
